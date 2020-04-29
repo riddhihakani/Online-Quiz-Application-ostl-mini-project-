@@ -1,0 +1,53 @@
+{% extends 'tutor/tutor_nav.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<body style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({% static 'images/quest.jpg' %}); ">
+
+
+<div class="container  d-flex justify-content-center shadow-lg p-3 mb-5 bg-white"  style="margin-top: 100px; border-radius: 10px;">
+    <h2>ADD QUESTIONS</h2>
+</div>
+<div class="mt-5">
+    <div class="container d-flex justify-content-center shadow-lg p-3 mb-5 bg-white" style="margin-top: 50px; border-radius: 10px;">
+        <div class="col-sm-6  mt-4">
+            <form action="" method="POST" autocomplete="off">
+                {% csrf_token %}
+                {{form.heading|as_crispy_field}}
+                {{form.FullQuestion|as_crispy_field}}
+                <div class="row">
+                    <div class="col-sm-6">
+                      {{form.option1|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{form.option2|as_crispy_field}}  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                      {{form.option3|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{form.option4|as_crispy_field}}  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{form.answer|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{form.marks|as_crispy_field}}  
+                    </div>
+                </div>
+               
+                <button type="submit" class="btn btn-success mb-4 mt-4">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+{% endblock content %}

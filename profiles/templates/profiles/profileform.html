@@ -1,0 +1,60 @@
+{% extends 'student/student_nav.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container"  style="margin-top: 100px;">
+    <p><h4>{{request.user.username}}, Complete Your Profile So We can know you better!</h4></p>
+</div>
+<!--form-->
+
+<div class="mt-5">
+    <div class="container d-flex justify-content-center shadow-lg p-3 mb-5 bg-white" style="margin-top: 50px;">
+        <div class="col-sm-6  mt-4">
+            <form action="{% url 'profiles:myprofile' %}" method="POST" autocomplete="off">
+                {% csrf_token %}
+              
+                <div class="row">
+                    <div class="col-sm-6">
+                      {{form.fname|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{form.lname|as_crispy_field}}  
+                    </div>
+                </div>
+                {{form.email|as_crispy_field}}
+                {{form.college|as_crispy_field}}
+                {{form.bio|as_crispy_field}}
+                <div class="row">
+                    <div class="col-sm-6">
+                      {{form.profession|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{form.degree|as_crispy_field}}  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                      {{form.nationality|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{form.state|as_crispy_field}}  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                      {{form.city|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{form.profile_img|as_crispy_field}}  
+                        {{form.user}}
+                    </div>
+                </div>
+               
+                <button type="submit" class="btn btn-success mb-4 mt-4">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

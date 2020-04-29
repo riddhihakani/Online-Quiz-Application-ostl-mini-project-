@@ -1,0 +1,25 @@
+{% extends 'tutor/tutor_nav.html' %}
+{% load static %}
+{% block content %}
+<body  style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url({% static 'images/subject.jpg' %}); width:100%; height: 1500px; ">
+<div class="container  d-flex justify-content-center shadow-lg p-3 mb-5 bg-white"  style="margin-top: 100px;">
+    <h2>QUESTIONS</h2>
+</div>
+<div class="container shadow-lg p-3 mb-5 bg-white rounded" style="margin-top: 50px;">
+    {% for question in question_list %}
+    <div class="row justify-content-center mt-4 mb-4">
+        <div class="col-sm-6 d-flex justify-content-center mt-2">
+            <h6><strong>{{question.FullQuestion}}</strong></h6>
+        </div>
+        <div class="col-sm-3 d-flex justify-content-center mt-2">
+            <a href="{% url 'tutor:updatequestion' question.id %}" class="btn btn-warning" >Update</a>
+        </div>
+        <div class="col-sm-3 d-flex justify-content-center mt-2">
+            <a href="{% url 'tutor:deletequestion' question.id %}" class="btn btn-danger" >Delete</a>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+</body>
+{% endblock content %}

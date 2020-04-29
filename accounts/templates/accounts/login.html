@@ -1,0 +1,49 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/320685ab56.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login Page</title>
+</head>
+<body style="background-image: url({% static 'images/quiz8.jpg' %}); background-repeat: no-repeat; background-size:cover; background-position:center;">
+   <!-- Image and text -->
+<nav class="navbar">
+    <a class="navbar-brand" href="{% url 'homepage' %}" id="brand">
+        <h3><i class="fas fa-brain"></i>BrainRush.com</h3>
+    </a>
+  </nav>
+  <div class="row d-flex justify-content-end mt-5 mr-5">
+    <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded mr-5" style="height: 500px;">
+        <div class="login d-flex mt-2 justify-content-center">
+            <h3> LOGIN ! </h3>
+        </div>
+        <div class="loginform col-sm-9 mt-5" style="margin-left: 40px;">
+            <form class="site-form" action="{% url 'accounts:login' %}" method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
+                {% if request.GET.next %}
+                 <input type="hidden" name="next" value="{{ request.GET.next}}">
+                 {% endif %}
+                 
+                <input type="submit" class="btn btn-success btn-large mt-4 mb-3" name="" value="login" style="margin-left: 80px;">
+             </form>
+          
+        </div>
+        <div class="row d-flex justify-content-center mt-5">
+            <h6>Don't have an account?  <a href="{% url 'accounts:signup' %}" style="text-decoration: none;">SIGN UP!</a></h6>
+        </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+
+
+   

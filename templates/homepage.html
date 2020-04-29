@@ -1,0 +1,241 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/320685ab56.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Welcome to BrainRush.com</title>
+  </head>
+  <body>
+      <!--navbar-->
+      <nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg ">
+        <a class="navbar-brand" href="#"><i class="fas fa-brain"></i>BrainRush.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"; aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Student
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'accounts:login' %}">Login</a>
+                <a class="dropdown-item" href="{% url 'accounts:signup' %}">Sign Up</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'accounts:login' %}">Tutor</a>
+            </li>
+           
+          </ul>
+        </div>
+      </nav>
+  <div class="jumbotron jumbotron-fluid" style="background-image: url({% static 'images/brain1.jpg' %}); background-repeat:no-repeat;background-position:top; background-size:cover;">
+   
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+  
+      <div class="options">
+        <div class="row d-flex justify-content-center" style="margin-top: 10%; " id="btrow">
+          <div class="col-sm-2 d-flex justify-content-center p-1">
+            <a class="btn btn-outline-light" href="#" id="button">Create Quiz</a>
+          </div>
+          <div class="col-sm-2 d-flex justify-content-center p-1">
+            <a class="btn btn-outline-light" href="#">Daily Challenge</a>
+          </div>
+          <div class="col-sm-2 d-flex justify-content-center p-1">
+            <a class="btn btn-outline-light" href="#">Sign Up</a>
+          </div>
+      
+        <div id="search">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          
+        </div>
+      </div>
+
+     
+    </div>
+  </div>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid" id="about">
+    <div class="container">
+      <h1 style="margin-top:-30px">About Us</h1>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis. Donec ut sapien at libero dictum eleifend. Quisque ut diam id eros sodales fermentum. Sed facilisis quam ac eros rutrum, vel auctor ante molestie. Suspendisse luctus nisi non tellus ornare, eu facilisis nunc ultrices. Proin ac sagittis elit. Vestibulum libero ex, condimentum quis orci id, finibus eleifend arcu. Morbi lobortis lectus quis accumsan feugiat. Pellentesque placerat odio arcu, ut viverra odio molestie a. Curabitur vehicula eleifend magna, a ullamcorper elit pellentesque consectetur. Curabitur lacus nulla, viverra sed dictum vel, feugiat eget velit. Praesent ultrices nibh metus, vel semper tortor posuere vel.</p>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="row">
+      <div class="col-sm-4" id="feature" style="background-image: url({% static 'images/bulb1.jpg' %});widows: 550px;height:550px;">
+
+      </div>
+      <div class="col-sm-8">
+        <div class="row justify-content-left mt-3 mb-3 ml-4">
+          <h2>MAIN FEATURES</h2>
+        </div>
+        <hr>
+        <div class="row d-flex justify-content-center mt-5">
+          <div class="col-sm-4 ml-3 mb-3">
+           <h4><span><i class="fas fa-book mr-4" style="color: orange;"></i></span></i>INSTANT FEEDBACK</h4>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+          </div>
+          <div class="col-sm-4 ml-3 mb-3">
+            <h4><i class="fas fa-laptop mr-4"  style="color: olive;"></i>INSTANT FEEDBACK</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-sm-4 ml-3 mb-3">
+              <h4><i class="fas fa-user-graduate mr-4" style="color: palevioletred;"></i>INSTANT FEEDBACK</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+            </div>
+            <div class="col-sm-4 ml-3 mb-3">
+              <h4><i class="far fa-edit mr-4" style="color: red;"></i>INSTANT FEEDBACK</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="options" style="background-image: url({% static 'images/self.jpg' %}); width: 100%; height:500px; background-size:cover;background-repeat:no-repeat;">
+   <div class="row d-flex justify-content-center">
+     <div class="col-sm-3 mt-5">
+      <div class="card mt-5" style="width: 18rem; height: 19rem ;">
+        <img src="{% static 'images/cube.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Create a New Quiz</h5>
+          <a href="#" class="btn btn-primary">Create Now!</a>
+        </div>
+      </div>
+     </div>
+     <div class="col-sm-3 mt-5">
+      <div class="card mt-5" style="width: 18rem; height: 19rem ;">
+        <img src="{% static 'images/student.jpg' %}" class="card-img-top" alt="..." style="height: 12rem;">
+        <div class="card-body">
+          <h5 class="card-title">Daily Challenge</h5>
+          <a href="#" class="btn btn-primary">Solve Now!</a>
+        </div>
+      </div>
+     </div>
+     <div class="col-sm-3 mt-5">
+      <div class="card mt-5" style="width: 18rem; height: 19rem ; ">
+        <img src="{% static 'images/graduation.jpg' %}" class="card-img-top" alt="..."  style="height: 12rem;">
+        <div class="card-body">
+          <h5 class="card-title">Be A part Of Our Family</h5>
+          <a href="#" class="btn btn-primary">Sign Up now</a>
+        </div>
+      </div>
+     </div>
+   </div>
+  </div>
+
+    <div class="container">
+      <div class="row  d-flex justify-content-center mt-5" id="why">
+        <h2 id="why">Why BrainRush.com ?</h2>
+      </div>
+      <div class="row d-flex justify-content-center mt-5" id="reasons">
+         <div class="col-sm-3 shadow-lg p-3 mb-5 ml-5 bg-white rounded">
+          <h3>INSTANT SCORES</h3>
+          <hr>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+         </div>
+         <div class="col-sm-3 shadow-lg p-3 mb-5 ml-5 bg-white rounded">
+          <h3>INSTANT SCORES</h3>
+          <hr>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+        </div>
+        <div class="col-sm-3 shadow-lg p-3 mb-5 ml-5 bg-white rounded">
+          <h3>INSTANT SCORES</h3>
+          <hr>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in ex at neque tempor sagittis.</p>
+        </div>
+      </div>
+       
+    </div>
+
+    <div id="footer">
+      <div class="row d-flex justify-content-center mt-5" >
+        <div class="col-lg-3 d-flex justify-content-center mt-4 ">
+          <ul style="list-style: none;">
+            <li><h4>CONTACT</h4></li>
+            <br>
+            <li>email: brain@rush.com</li>
+            <li>phone: 7023486310</li>
+            <li>address: djsanghvi,vile parle(west),mumbai-67</li>
+          </ul>
+        </div>
+        <div class="col-lg-3 d-flex justify-content-center mt-4">
+           <ul style="list-style: none;">
+             <li><h4>FEEDBACK</h4></li>
+             <br>
+             <li>your feedback is important</li>
+             <li>Send us your feedbacks at:</li>
+             <li>riddhihakani@yahoo.com</li>
+           </ul>
+       </div>
+       <div class="col-lg-3 d-flex justify-content-center mt-4">
+         <ul style="list-style: none;">
+           <li><h4>BRANCHES</h4></li>
+           <br>
+           <li>Personal coaching is available at following branches:</li>
+           <li>Azad Nagar,Andheri(west)</li>
+           <li>Borivali(west)</li>
+           <li>Vasai(west)</li>
+           <li>For more details visit our website.</li>
+         </ul>
+       </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+         <h5>Follow us on : <i class="fab fa-facebook-f ml-3"></i><i class="fab fa-instagram ml-3"></i><i class="fab fa-twitter ml-3"></i></h5>
+      </div>
+   </div>
+    
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      $(document).scroll(function(){
+        var $nav = $("#mainNavbar");
+        $nav.toggleClass("scrolled",$(this).scrollTop() > nav.height());
+      })
+    })
+  </script>
+  
+  
+  </body>
+</html>

@@ -1,0 +1,83 @@
+{% extends 'tutor/tutor_nav.html' %}
+
+{% block content %}
+
+<div class="row d-flex justify-content-center" id="row1">
+  <div class="col-sm-2 d-flex justify-content-center">
+    <div class="circle d-flex justify-content-center">
+      <a href="{% url 'tutor:newcourse' %}">Add Course</a>
+    </div>
+  </div>
+  <div class="col-sm-2 d-flex justify-content-center">
+    <div class="circle d-flex justify-content-center">
+      <a href="{% url 'tutor:newheading' %}">Add Topic</a>
+    </div>
+  </div>
+  <div class="col-sm-2 d-flex justify-content-center">
+    <div class="circle d-flex justify-content-center">
+      <a href="{% url 'tutor:newquest' %}">Add Question</a>
+    </div>
+  </div>
+</div>
+
+<div class="row row d-flex justify-content-center" id="row2">
+  <div class="col-sm-2 d-flex justify-content-center">
+    <div class="circle d-flex justify-content-center">
+      <a href="{% url 'profiles:profileform' %}">Profile</a>
+    </div>
+  </div>
+  <div class="col-sm-2 d-flex justify-content-center">
+    <div class="circle d-flex justify-content-center">
+      <p>Reports</p>
+    </div>
+  </div>
+  <div class="col-sm-2 d-flex justify-content-center">
+    <div class="circle d-flex justify-content-center">
+      <a href="{% url 'accounts:logout'%}">Logout</a>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+#row1{
+  margin-top: 8%;
+ 
+}
+#row2{
+  margin-top: 0%;
+  
+}
+
+
+.circle{
+
+  background-color: rgb(8, 46, 95);
+  width: 20%;
+  height: 20%;
+  border-radius: 200px;
+  padding: 90px;
+  color: white;
+
+}
+
+a{
+  color: white;
+  
+}
+
+a:hover{
+  color: white;
+  text-decoration: none;
+}
+.circle:hover{
+
+  border-radius: 200px;
+  padding: 100px;
+}
+</style>
+
+
+
+{% endblock %}

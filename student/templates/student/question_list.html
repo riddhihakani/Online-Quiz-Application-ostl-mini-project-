@@ -1,0 +1,114 @@
+{% extends 'student/student_nav.html' %}
+{% load static %}
+{% block content %}
+
+<!-- <script src="({% static 'js/marks.js' %}"></script> -->
+
+<body style="background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url({% static 'images/subject.jpg' %}); width:100%; height: 1500px; ">
+<div class="container d-flex justify-content-center shadow-lg p-3 mb-5 bg-white rounded"  style="margin-top: 100px;">
+   <h3 id="atb">ALL THE BEST!!</h3>
+</div>
+<div id="result" class="container d-flex justify-content-center shadow-lg p-3 mb-5 bg-white rounded" style="visibility: hidden;height:300px; background-image: linear-gradient(rgb(255, 255, 255,0.2),rgb(255, 255, 255,0.2)),url({% static 'images/confetti.jpg' %});">
+  <div class="row" style="margin-top: 50px;">
+    <h1 id="res" class="mt-5"><strong></strong></h1>
+  </div>
+  <br>
+  <br>
+  <!-- <div class="d-flex justify-content-end ">
+    <button class="btn btn-info btn-large">View Solution</button>
+  </div> -->
+</div>
+<!--questions-->
+  <div class="container shadow-lg p-3 mb-5 bg-white rounded " id="hide" style="margin-top: -300px; background: white;visibility: visible; ">
+   
+
+    {% for question in question_list %}
+    <div class="row ml-5 mt-2">
+      <h4>Question: {{question.FullQuestion}} ?</h4>     
+      <h6 class="mt-1" style="margin-left: 80px; color: grey;">{{question.marks}} points</h6>    
+    </div>
+      
+    
+    <div class="row ml-5 mt-2 mb-4">
+      <form action="" method="POST" class="inline">
+        {% csrf_token %}
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="options" id="exampleRadios1" value="{{question.option1}}" onclick="match('{{question.answer}}','{{question.option1}}','{{question.marks}}')">
+              <label class="form-check-label" for="exampleRadios1">
+                <strong><h5>{{question.option1}}</h5></strong>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="options" id="exampleRadios1" value="{{question.option2}}" onclick="match('{{question.answer}}','{{question.option2}}','{{question.marks}}')">
+              <label class="form-check-label" for="exampleRadios1">
+                <strong><h5>{{question.option2}}</h5></strong>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="options" id="exampleRadios1" value="{{question.option3}}" onclick="match('{{question.answer}}','{{question.option3}}','{{question.marks}}')">
+              <label class="form-check-label" for="exampleRadios1">
+                <strong><h5>{{question.option3}}</h5></strong>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="options" id="exampleRadios1" value="{{question.option4}}" onclick="match('{{question.answer}}','{{question.option4}}','{{question.marks}}')">
+              <label class="form-check-label" for="exampleRadios1">
+                <strong><h5>{{question.option4}}</h5></strong>
+              </label>
+            </div>
+  
+      </form>
+    </div>
+    <hr>
+      
+     
+ 
+  
+  {% endfor %}
+  <a  href="#" class="btn btn-success" onclick="finalscore('{{request.user}}')" style="margin-left: 500px;">Submit</a>
+  
+</div>
+
+
+
+
+
+
+          
+         
+<script>
+
+  var score = 0;
+  var totalscore = 0;
+  function match(a,b,c){
+            
+       var d = parseInt(c)
+       totalscore = totalscore + d;
+        if(b == a)
+        {
+          
+          score = score + d;
+        }
+      
+  console.log(b) 
+  console.log(a)
+  console.log(score)
+  console.log(totalscore)
+  
+ 
+  }
+
+  function finalscore(n){
+    var name = n.toUpperCase();
+  
+    document.getElementById("hide").style.visibility="hidden";
+    document.getElementById("atb").innerHTML = "CONGRATULATIONS " + (name) + " !";
+    document.getElementById("result").style.visibility="visible";
+    document.getElementById("res").innerHTML="YOU SCORED " +(score)+ " OUT OF " + (totalscore);
+  }
+
+ 
+</script>
+
+</body>
+{% endblock content %}

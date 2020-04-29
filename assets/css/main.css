@@ -1,0 +1,41 @@
+
+.navbar{
+  
+    background-color: none;
+   
+ 
+}
+
+
+.navbar-brand , .nav-link{
+    color: rgb(12, 30, 112);
+}
+
+
+
+#btrow{
+    padding: 20px;
+    background-color:rgba(24, 22, 22, 0.8);
+    border-radius: 5px;
+   
+}
+
+#about{
+    background-color: white;
+}
+
+
+.card{
+    margin-top: 85px !important;
+}
+
+
+#footer{
+    background-color: rgb(5, 33, 70) !important;
+    color: white !important;
+}
+
+.navbar .scrolled{
+    background-color: rgba(13, 65, 134,0.6);
+    color: white;
+}
